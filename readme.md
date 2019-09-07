@@ -1,4 +1,4 @@
-# Steps needed to prepare STM32F103C8 (Blue Pill) to work with Arduino
+# Steps needed to setup STM32F103C8 (Blue Pill)
 
 ## Files in this repo
 
