@@ -28,7 +28,7 @@
   * USART support: Enabled (generic Serial)
   * USB support: CDC (generic Serial). <- Important, if you don't enable this, you won't get COM port after upload.
   * Upload method: Maple DFU Bootloader 2.0
-  * Port: <Check Windows Device Manager>
+  * Port: [Check Windows Device Manager]
 
 ### PlatformIO
 
