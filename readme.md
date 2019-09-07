@@ -14,7 +14,8 @@
 * You must flash the bootloader with generic_boot20_pc13.bin (assuming LED is PC13)
 * Obtain STM32duino bootloader from https://github.com/rogerclarkmelbourne/STM32duino-bootloader/tree/master/binaries
 * Easiest way to flash is via STLINK V2 and STM32CubeProg https://www.st.com/en/development-tools/stm32cubeprog.html
-* To program, set Boot1 jumper to 1, then unplug/replug. LED should flash quickly.
+* To flash set Boot1 jumper to 1 then unplug/replug. LED should flash quickly. 
+* Note: Other pages say set Boot0 to 1...for me setting Boot1 to 1 worked.
 * Connect via STM32CubeProg and select the .bin file, use address 0x08000000, size 0x400 and Data width 32-bit. Press Download.
 * Important: After download complete, you must select Boot1 back to pin 0 before resetting the board!
 * Now connect micro-USB to computer. A new USB Serial Device should appear under Ports (COM & LPT) in Windows Device Manager.
