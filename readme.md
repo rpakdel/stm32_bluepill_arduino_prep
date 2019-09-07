@@ -10,7 +10,7 @@
 
 ## Rough steps to getting the STM32F103C8 working:
 
-* Note: The generic blue boards do not come with the micro-USB enabled.
+* Note: The generic blue boards do not come with the micro-USB enabled. 
 * You must flash the bootloader with generic_boot20_pc13.bin (assuming LED is PC13)
 * Obtain STM32duino bootloader from https://github.com/rogerclarkmelbourne/STM32duino-bootloader/tree/master/binaries
 * Easiest way to flash is via STLINK V2 and STM32CubeProg https://www.st.com/en/development-tools/stm32cubeprog.html
@@ -20,7 +20,8 @@
 * Important: After download complete, you must select Boot1 back to pin 0 before resetting the board!
 * Now connect micro-USB to computer. A new USB Serial Device should appear under Ports (COM & LPT) in Windows Device Manager.
 * Ensure Maple DFU appears in Windows Device Manager after flashing.
-* Note: If you get `Couldn't find the DFU device: [1EAF:0003]` when uploading, then manually reset the device using the onboard push button.
+* Note: If you get `Couldn't find the DFU device: [1EAF:0003]` when uploading a sketch, then manually reset the device using the onboard push button.
+* If uploading a sketch still fails, reflash using the above bootloader again.
 
 ### Arduino IDE
 
