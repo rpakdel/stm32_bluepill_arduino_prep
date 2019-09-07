@@ -22,6 +22,7 @@
 * Ensure Maple DFU appears in Windows Device Manager after flashing.
 * Note: If you get `Couldn't find the DFU device: [1EAF:0003]` when uploading a sketch, then manually reset the device using the onboard push button.
 * If uploading a sketch still fails, reflash using the above bootloader again.
+* If USB port doesn't appear after sketch upload or Windows complains and disabled the device, then see USB resistor problem below.
 
 ### Arduino IDE
 
@@ -51,8 +52,7 @@ upload_protocol = dfu
 
 ## USB resistor problem
 * The D+ of micro USB has a wrong resistor R10 value. It should be 1.5k ohm. 
-* Check the resistance between pin A12 and 3.3v. If not, replace R10. I removed it and soldered a regular 1.5k resistor on above the board between A12 and 3.3v.
-
+* Check the resistance between pin A12 and 3.3v. If not 1.6k ohm, replace R10. I removed it and soldered a regular 1.5k resistor on above the board between A12 and 3.3v.
 
 ## References
 
