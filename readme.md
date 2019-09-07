@@ -19,6 +19,8 @@
 * Connect via STM32CubeProg and select the .bin file, use address 0x08000000, size 0x400 and Data width 32-bit. Press Download.
 * Important: After download complete, you must select Boot1 back to pin 0 before resetting the board!
 * Now connect micro-USB to computer. A new USB Serial Device should appear under Ports (COM & LPT) in Windows Device Manager.
+* Ensure Maple DFU appears in Windows Device Manager after flashing.
+* Note: If you get `Couldn't find the DFU device: [1EAF:0003]` when uploading, then manually reset the device using the onboard push button.
 
 ### Arduino IDE
 
