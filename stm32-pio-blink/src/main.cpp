@@ -6,11 +6,16 @@ void setup()
   Serial.begin(115200);
 }
 
+int count = 0;
+
 void loop() 
 {
   digitalWrite(PC13, HIGH);
-  delay(1000);
+  delay(500);
   digitalWrite(PC13, LOW);
-  delay(1000);
-  Serial.println("Hello2");
+  delay(500);
+  
+  count++;
+  Serial.print("Hello ");
+  Serial.println(count);
 }

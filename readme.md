@@ -35,7 +35,7 @@
   * Upload method: Maple DFU Bootloader 2.0
   * Port: [Check Windows Device Manager]
 
-### PlatformIO
+### PlatformIO: USB Upload and Serial 
 
 * Install PlatformIO extension in VS Code
 * See https://docs.platformio.org/en/latest/boards/ststm32/bluepill_f103c8.html
@@ -50,7 +50,35 @@ upload_port = COM9
 upload_protocol = dfu
 ```
 
+### PlatformIO: ST-Link V2 Upload, debug and Serial interface (Recommended)
+
+* Upload is done via ST-Link V2
+* Can debug sketches directly in VS Code (Press F5)
+* Use the following platformio.ini settings
+
+```
+[env:BLUEPILL_F103C8]
+platform = ststm32
+board = bluepill_f103c8_128k
+framework = arduino
+upload_port = COM9
+upload_protocol = stlink
+build_flags =
+  -D PIO_FRAMEWORK_ARDUINO_NANOLIB_FLOAT_PRINTF  
+  -D PIO_FRAMEWORK_ARDUINO_ENABLE_CDC
+  -D USBCON
+  -D USBD_VID=0x0483
+  -D USB_MANUFACTURER="Unknown"
+  -D USB_PRODUCT="\"BLUEPILL_F103C8\""
+  -D HAL_PCD_MODULE_ENABLED
+```
+
+* Note: If upload fails with `Warn : UNEXPECTED idcode: 0x2ba01477 Error: expected 1 of 1: 0x1ba01477` then edit .platformio/packages/tool-openocd/scripts/target/stm32f1x.cfg and change `set _CPUTAPID 0x1ba01477` to `set _CPUTAPID 0x2ba01477`
+* Note: .platformIO is in `%HOMEPATH%\.platformio` on Windows
+
+
 ## USB resistor problem
+
 * The D+ of micro USB has a wrong resistor R10 value. It should be 1.5k ohm. 
 * Check the resistance between pin A12 and 3.3v. If not 1.6k ohm, replace R10. I removed it and soldered a regular 1.5k resistor on above the board between A12 and 3.3v.
 
